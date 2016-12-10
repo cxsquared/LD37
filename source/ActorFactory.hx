@@ -32,14 +32,14 @@ class ActorFactory
         roomItemClasses.set("RoomItem", RoomItem);
     }
 
-    public function parseItems(ItemsDataPath:String):Map<String, RoomItem>
+    public function parseItems(ItemsDataPath:String):FlxTypedGroup<RoomItem>
     {
-        var allItems = new Map<String, RoomItem>();
+        var allItems = new FlxTypedGroup<RoomItem>();
         var jsData = Json.parse(Assets.getText(ItemsDataPath));
         var allItemData:Array<Dynamic> = Reflect.field(jsData, "items");
         for (itemData in allItemData)
         {
-            allItems.set(Reflect.field(itemData, "name"), parseItem(itemData));
+            allItems.add(parseItem(itemData));
         }
 
         return allItems;

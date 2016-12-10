@@ -45,7 +45,7 @@ class RoomItem extends FlxSprite
     {
         isDirty = false;
         animation.play("Clean");
-        FlxG.log.add("Clean called on " + name);
+        FlxG.log.add("Clean called on " + name + " at " + x + ":" + y);
     }
 
     public function Dirty():Void

@@ -26,8 +26,8 @@ class PlayState extends FlxState
 
     private function addItems():Void
     {
-        var items:Map<String, RoomItem> = ActorFactory.getInstance().parseItems("assets/data/itemsData.json");
-        for (item in items.iterator())
+        var items = ActorFactory.getInstance().parseItems("assets/data/itemsData.json");
+        for (item in items)
         {
             add(item);
         }

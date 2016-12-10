@@ -1,16 +1,133 @@
 {
     "items":
     [
-        {
-            "name": "Bed",
-            "image": "assets/images/bed.png",
+       {
+            "name": "WasherDryer",
+            "image": "assets/images/washerDryer.png",
             "class": "RoomItem",
-            "X": 530,
-            "Y": 630,
+            "X": 758,
+            "Y": 199,
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0]
+
+        },
+        {
+            "name": "Bed",
+            "image": "assets/images/bed.png",
+            "class": "RoomItem",
+            "X": 435,
+            "Y": 556,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+       },
+       {
+            "name": "Fridge",
+            "image": "assets/images/fridge.png",
+            "class": "RoomItem",
+            "X": 40,
+            "Y": 571,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+       },
+       {
+            "name": "Cabinets",
+            "image": "assets/images/cabinets.png",
+            "class": "RoomItem",
+            "X": 43,
+            "Y": 439,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+       },
+       {
+            "name": "DishWasher",
+            "image": "assets/images/dishWasher.png",
+            "class": "RoomItem",
+            "X": 161,
+            "Y": 854,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+
+       },
+       {
+            "name": "Sink",
+            "image": "assets/images/sink.png",
+            "class": "RoomItem",
+            "X": 219,
+            "Y": 897,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+       },
+       {
+            "name": "Trashcan",
+            "image": "assets/images/trashCan.png",
+            "class": "RoomItem",
+            "X": 388,
+            "Y": 1000,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+
+       },
+       {
+            "name": "Table",
+            "image": "assets/images/table.png",
+            "class": "RoomItem",
+            "X": 731,
+            "Y": 761,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+
+       },
+       {
+            "name": "Shelf",
+            "image": "assets/images/shelf.png",
+            "class": "RoomItem",
+            "X": 1334,
+            "Y":449,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+
+       },
+       {
+            "name": "TV Stand",
+            "image": "assets/images/tv-stand.png",
+            "class": "RoomItem",
+            "X": 844,
+            "Y": 880,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+
+       },
+       {
+            "name": "TV",
+            "image": "assets/images/TV.png",
+            "class": "RoomItem",
+            "X": 1000,
+            "Y": 788,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+
        }
     ]
 }
