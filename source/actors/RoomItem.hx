@@ -6,8 +6,9 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 
 class RoomItem extends FlxSprite
 {
+    var objectsToDirty:FlxTypedGroup<RoomItem>;
 
-    var objectsToDirty:FlxTypedGroup<FlxSprite>;
+    public var isDirty(default, null):Bool = true;
 
     public function new(X:Int, Y:Int, Image:Dynamic)
     {
@@ -15,10 +16,16 @@ class RoomItem extends FlxSprite
         this.loadGraphic(Image);
 
         FlxMouseEventManager.add(this, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
+        objectsToDirty = new FlxTypedGroup<RoomItem>();
     }
     
     private function onMouseDown(s:FlxSprite):Void
     {
+        Clean();
+        objectsToDirty.forEach(function(object:RoomItem):Void
+                {
+                    object.Dirty();
+                });
     }
     
     private function onMouseUp(s:FlxSprite):Void
@@ -31,5 +38,15 @@ class RoomItem extends FlxSprite
 
     private function onMouseOut(s:FlxSprite):Void
     {
+    }
+
+    public function Clean():Void
+    {
+        isDirty = false;
+    }
+
+    public function Dirty():Void
+    {
+        isDirty = true;
     }
 }
