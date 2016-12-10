@@ -6,6 +6,7 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
+import actors.RoomItem;
 
 class PlayState extends FlxState
 {
@@ -19,10 +20,29 @@ class PlayState extends FlxState
         background = new FlxSprite();
         background.loadGraphic(AssetPaths.room__png);
         add(background);
+
+        addItems();
 	}
+
+    private function addItems():Void
+    {
+        var items:Map<String, RoomItem> = ActorFactory.getInstance().parseItems("assets/data/itemsData.json");
+        for (item in items.iterator())
+        {
+            add(item);
+        }
+    }
 
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 	}
+
+    private function createItems():Void
+    {
+    }
+
+    private function linkItems():Void
+    {
+    }
 }

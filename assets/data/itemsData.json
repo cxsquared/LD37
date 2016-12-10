@@ -1,0 +1,16 @@
+{
+    "items":
+    [
+        {
+            "name": "Bed",
+            "image": "assets/images/bed.png",
+            "class": "RoomItem",
+            "X": 530,
+            "Y": 630,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0]
+       }
+    ]
+}

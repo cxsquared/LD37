@@ -3,17 +3,18 @@ package actors;
 import flixel.FlxSprite;
 import flixel.input.mouse.FlxMouseEventManager;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.FlxG;
 
 class RoomItem extends FlxSprite
 {
     var objectsToDirty:FlxTypedGroup<RoomItem>;
 
     public var isDirty(default, null):Bool = true;
+    public var name = "";
 
-    public function new(X:Int, Y:Int, Image:Dynamic)
+    public function new(X:Int, Y:Int)
     {
         super(X, Y);
-        this.loadGraphic(Image);
 
         FlxMouseEventManager.add(this, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
         objectsToDirty = new FlxTypedGroup<RoomItem>();
@@ -43,10 +44,21 @@ class RoomItem extends FlxSprite
     public function Clean():Void
     {
         isDirty = false;
+        animation.play("Clean");
+        FlxG.log.add("Clean called on " + name);
     }
 
     public function Dirty():Void
     {
         isDirty = true;
+        animation.play("Dirty");
+        FlxG.log.add("Dirty called on " + name);
+    }
+
+    override public function destroy():Void
+    {
+        objectsToDirty.clear();
+        objectsToDirty.destroy();
+        super.destroy();
     }
 }
