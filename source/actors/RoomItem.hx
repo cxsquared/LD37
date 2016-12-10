@@ -55,6 +55,9 @@ class RoomItem extends FlxSprite
             isDirty = true;
             animation.play("Dirty");
             FlxG.log.add("Dirty called on " + name);
+            var dust = new DustCloud(x,y);
+            FlxG.state.add(dust);
+            dust.explode();
         }
     }
 
