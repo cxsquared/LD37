@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"name": "LD37",
+			"path": "/Users/cxsquared/Documents/coding/haxe/LD37"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Flixel",
+			"path": "/usr/local/lib/haxe/lib/flixel/4,2,0/"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Flixel Addons",
+			"path": "/usr/local/lib/haxe/lib/flixel-addons/2,2,0/"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Haxe",
+			"path": "/usr/local/lib/haxe/std"
+		}
+	]
+}
