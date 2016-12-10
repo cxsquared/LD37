@@ -50,9 +50,12 @@ class RoomItem extends FlxSprite
 
     public function Dirty():Void
     {
-        isDirty = true;
-        animation.play("Dirty");
-        FlxG.log.add("Dirty called on " + name);
+        if (!isDirty)
+        {
+            isDirty = true;
+            animation.play("Dirty");
+            FlxG.log.add("Dirty called on " + name);
+        }
     }
 
     override public function destroy():Void
@@ -60,5 +63,10 @@ class RoomItem extends FlxSprite
         objectsToDirty.clear();
         objectsToDirty.destroy();
         super.destroy();
+    }
+
+    public function addObjectToDirty(item:RoomItem):Void
+    {
+        objectsToDirty.add(item);
     }
 }

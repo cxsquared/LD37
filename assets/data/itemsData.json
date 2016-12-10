@@ -129,5 +129,10 @@
             "dirtyFrames": [0]
 
        }
-    ]
+    ],
+    "LinkData":
+    { 
+        "Sink": ["DishWasher"],
+        "Shelf": ["Table"]
+    }
 }
