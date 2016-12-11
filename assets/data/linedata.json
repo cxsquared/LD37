@@ -6,7 +6,18 @@
         "cody": "Cody Claborn\n@Cxsquared",
         "frank": "Frank Moussette",
         "wifeStart": "I'm off to the store love. I'll be back in an hour. The house better be clean by the time I get back!",
-        "playerStart": "Ugh I'll never get this cleaned in time."
+        "playerStart": "Ugh I'll never get this cleaned in time.",
+        "roomCleanedGood": "Looks like I got the room cleaned with plenty of time to spare.",
+        "roomCleaned": "Finally! It's all done and just in time.",
+        "roomCleanedWife00": "I'm HOME!",
+        "roomCleanedWife01": "Not bad at all. I'm glad you could at least do this one thing.",
+        "timeup00": "I can't believe you couldn't at least clean the house. That's it I'm done with you.",
+        "timeup01": "But honey...you can't really mean that can you.",
+        "timeup02": "This is the last straw. We are over.",
+        "timeupSecret00": "I gave you one thing to do and you couldn't even get that done!",
+        "timeupSecret01": "I found out what you've been doing...",
+        "timeupSecret02": "What do you mean?",
+        "timeupSecret03": "After all we've done together. I can't believe it's ending like this."
     }
 
 }

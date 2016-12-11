@@ -29,10 +29,15 @@ class TimeManager
     {
         if (timeSpent >= MaxTime)
         {
-            return true;
+            return false;
         }
 
-        return false;
+        return true;
+    }
+
+    public function getTimeLeft():Int
+    {
+        return MaxTime - timeSpent;
     }
 
 }

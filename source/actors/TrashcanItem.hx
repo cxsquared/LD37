@@ -24,6 +24,7 @@ class TrashcanItem extends RoomItem
         trashbag.alpha = 1;
         trashbag.x = 391;
         trashbag.y = 954;
+        RoomItem.isCleaning = true;
         FlxTween.tween(trashbag, {y:trashbag.y - trashbag.width}, .5, {ease:FlxEase.elasticInOut, onComplete:trashOut});
         //FlxG.log.add("trashbag at " + trashbag.x + " " + trashbag.y);
     }
@@ -36,6 +37,7 @@ class TrashcanItem extends RoomItem
     private function trashDone(t:FlxTween):Void
     {
         trashbag.alpha = 0;
+        RoomItem.isCleaning = false;
     }
 
     override public function Dirty():Void

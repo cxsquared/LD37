@@ -22,7 +22,7 @@ class VacumItem extends RoomItem
     {
         super.Clean();
         FlxTween.tween(this, {x: 1185, y: 635}, .5, {ease:FlxEase.elasticInOut, onComplete:VacumCleanFloor});
-        isCleaning = true;
+        RoomItem.isCleaning = true;
         //FlxG.log.add("DirtTrail at " + dirtTrail.x + " " + dirtTrail.y);
         // 1185:635
         //391:1082
@@ -47,7 +47,7 @@ class VacumItem extends RoomItem
 
     private function VacumTweenDone(t:FlxTween):Void
     {
-        isCleaning = false;
+        RoomItem.isCleaning = false;
     }
 
     override public function Dirty():Void

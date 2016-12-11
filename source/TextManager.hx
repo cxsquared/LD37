@@ -34,19 +34,29 @@ class TextManager extends FlxGroup
     {
         super();
         background = new FlxSprite();
-        background.makeGraphic(Std.int(FlxG.width), Std.int(FlxG.height/4), FlxColor.fromRGBFloat(.25,.25,.25,.85));
-        background.y = FlxG.height - FlxG.height/4;
-        background.alpha = 0;
+        background.makeGraphic(Std.int(FlxG.width), Std.int(FlxG.height/3), FlxColor.fromRGBFloat(.25,.25,.25,.85));
+        background.y = FlxG.height - FlxG.height/3;
+        background.alpha = -1;
         add(background);
 
-        textSprite = new FlxText(10, FlxG.height - FlxG.height/4 + 10, FlxG.width-20, "This is a test for the text", 72);
+        textSprite = new FlxText(9, FlxG.height - FlxG.height/4 + 10, FlxG.width-20, "This is a test for the text", 72);
         textSprite.alignment = FlxTextAlign.CENTER;
-        textSprite.setFormat(AssetPaths.GeosansLight__ttf, 72);
-        textSprite.alpha = 0;
+        textSprite.setFormat(AssetPaths.GeosansLight__ttf, 71);
+        textSprite.alpha = -1;
         add(textSprite);
 
         textTimer = new FlxTimer();
         textQueue = new Array<TextData>();
+
+    }
+
+    public static function reset()
+    {
+        if (instance != null)
+        {
+            instance.destroy();
+            instance = null;
+        }
     }
 
     override public function update(elapsed:Float):Void
@@ -98,7 +108,7 @@ class TextManager extends FlxGroup
         }
         else
         {
-            var newTextData = textQueue.pop();
+            var newTextData = textQueue.shift();
             textSprite.text = newTextData.text;
             textSprite.color = newTextData.color;
             placeText(newTextData.showOnTop);

@@ -12,7 +12,7 @@ class RoomItem extends FlxSprite
     public var isDirty(default, null):Bool = true;
     public var name = "";
     public var timeItTakes = 5;
-    private var isCleaning = false;
+    public static var isCleaning = false;
 
     public function new(X:Int, Y:Int, CanClean:Bool=true)
     {
@@ -22,6 +22,10 @@ class RoomItem extends FlxSprite
         {
             FlxMouseEventManager.add(this, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
             objectsToDirty = new FlxTypedGroup<RoomItem>();
+        }
+        else
+        {
+            isDirty = false;
         }
     }
     
@@ -80,8 +84,11 @@ class RoomItem extends FlxSprite
 
     override public function destroy():Void
     {
-        objectsToDirty.clear();
-        objectsToDirty.destroy();
+        if (objectsToDirty != null)
+        {
+            objectsToDirty.clear();
+            objectsToDirty.destroy();
+        }
         super.destroy();
     }
 

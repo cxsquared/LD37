@@ -72,11 +72,11 @@
             "class": "RoomItem",
             "X": 161,
             "Y": 854,
-            "height": -1,
-            "width": -1,
+            "height": 280,
+            "width": 296,
             "cleanFrames": [0],
-            "dirtyFrames": [0],
-            "time": 5
+            "dirtyFrames": [1],
+            "time": 3
        },
        {
             "name": "Sink",
@@ -88,7 +88,7 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 3
        },
        {
             "name": "Trashcan",
@@ -100,7 +100,7 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 3
        },
        {
             "name": "Table",
@@ -112,7 +112,7 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 3
        },
        {
            "name": "Vacum",
@@ -124,7 +124,7 @@
            "width": -1,
            "cleanFrames": [0],
            "dirtyFrames": [0],
-            "time": 5
+            "time": 2
        },
        {
             "name": "Shelf",
@@ -169,8 +169,8 @@
     { 
         "Sink": ["DishWasher"],
         "Shelf": ["Table"],
-        "DishWasher": ["Vacum"],
         "Trashcan": ["Vacum"],
-        "Milk": ["Sink"]
+        "Milk": ["Sink"],
+        "Table": ["Sink"]
     }
 }
