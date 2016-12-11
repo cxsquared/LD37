@@ -11,6 +11,7 @@ class RoomItem extends FlxSprite
 
     public var isDirty(default, null):Bool = true;
     public var name = "";
+    public var timeItTakes = 5;
 
     public function new(X:Int, Y:Int)
     {
@@ -46,6 +47,7 @@ class RoomItem extends FlxSprite
         isDirty = false;
         animation.play("Clean");
         FlxG.log.add("Clean called on " + name + " at " + x + ":" + y);
+        TimeManager.getInstance().spendTime(timeItTakes);
     }
 
     public function Dirty():Void

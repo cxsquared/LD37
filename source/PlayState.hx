@@ -20,6 +20,8 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		super.create();
+        
+        SoundManager.getInstance().playMusic();
 
         background = new FlxSprite();
         background.loadGraphic(AssetPaths.room__png);

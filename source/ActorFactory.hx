@@ -1,6 +1,6 @@
 package;
 
-import actors.RoomItem;
+import actors.*;
 import haxe.Json;
 import openfl.Assets;
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -30,6 +30,7 @@ class ActorFactory
     {
         roomItemClasses = new Map<String, Class<Dynamic>>();
         roomItemClasses.set("RoomItem", RoomItem);
+        roomItemClasses.set("VacumItem", VacumItem);
     }
 
     public function parseItems(ItemsDataPath:String):FlxTypedGroup<RoomItem>
@@ -67,6 +68,7 @@ class ActorFactory
         newItem.animation.add("Clean", Reflect.field(itemData, "cleanFrames"), 12, false);
         newItem.animation.add("Dirty", Reflect.field(itemData, "dirtyFrames"), 12, false);
         newItem.animation.play("Dirty");
+        newItem.timeItTakes = Reflect.field(itemData, "time");
         return newItem;
     }
 }

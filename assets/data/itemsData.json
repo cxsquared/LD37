@@ -10,8 +10,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
-
+            "dirtyFrames": [0],
+            "time": 5
         },
         {
             "name": "Bed",
@@ -22,7 +22,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "Fridge",
@@ -33,7 +34,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "Cabinets",
@@ -44,7 +46,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "DishWasher",
@@ -55,8 +58,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
-
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "Sink",
@@ -67,7 +70,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "Trashcan",
@@ -78,8 +82,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
-
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "Table",
@@ -90,8 +94,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
-
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "Shelf",
@@ -102,8 +106,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
-
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "TV Stand",
@@ -114,8 +118,8 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
-
+            "dirtyFrames": [0],
+            "time": 5
        },
        {
             "name": "TV",
@@ -126,13 +130,27 @@
             "height": -1,
             "width": -1,
             "cleanFrames": [0],
-            "dirtyFrames": [0]
-
+            "dirtyFrames": [0],
+            "time": 5
+       },
+       {
+           "name": "Vacum",
+           "image": "assets/images/vacuum.png",
+           "class": "VacumItem",
+           "X": 954,
+           "Y": 486,
+           "height": -1,
+           "width": -1,
+           "cleanFrames": [0],
+           "dirtyFrames": [0],
+            "time": 5
        }
     ],
     "LinkData":
     { 
         "Sink": ["DishWasher"],
-        "Shelf": ["Table"]
+        "Shelf": ["Table"],
+        "DishWasher": ["Vacum"],
+        "Trashcan": ["Vacum"]
     }
 }
