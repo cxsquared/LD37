@@ -31,6 +31,9 @@ class PlayState extends FlxState
         linkItems();
 
         add(TextManager.getInstance());
+
+        TextManager.getInstance().showText("Woot woot hopefully this works. This should be the first messaged shown.", 3);
+        TextManager.getInstance().showText("This should be show secend after 3 seconds and this should show up on top.", 3, true);
 	}
 
     private function addItems():Void

@@ -24,7 +24,7 @@ class RoomItem extends FlxSprite
     
     private function onMouseDown(s:FlxSprite):Void
     {
-        if (isDirty && !isCleaning)
+        if (isDirty && !isCleaning && !TextManager.getInstance().showingText)
         {
             Clean();
             objectsToDirty.forEach(function(object:RoomItem):Void
