@@ -11,7 +11,21 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
+            "time": 5,
+            "clean": false
+        },
+        {
+            "name": "Milk",
+            "image": "assets/images/milk.png",
+            "class": "RoomItem",
+            "X": 765,
+            "Y": 800,
+            "height": 41,
+            "width": 44,
+            "cleanFrames": [1],
+            "dirtyFrames": [0],
             "time": 5
+
         },
         {
             "name": "Bed",
@@ -23,7 +37,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 5,
+            "clean": false
        },
        {
             "name": "Fridge",
@@ -35,7 +50,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 5,
+            "clean": false
        },
        {
             "name": "Cabinets",
@@ -47,7 +63,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 5,
+            "clean": false
        },
        {
             "name": "DishWasher",
@@ -64,7 +81,7 @@
        {
             "name": "Sink",
             "image": "assets/images/sink.png",
-            "class": "RoomItem",
+            "class": "SinkItem",
             "X": 219,
             "Y": 897,
             "height": -1,
@@ -88,7 +105,7 @@
        {
             "name": "Table",
             "image": "assets/images/table.png",
-            "class": "RoomItem",
+            "class": "TableItem",
             "X": 731,
             "Y": 761,
             "height": -1,
@@ -131,7 +148,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 5,
+            "clean": false
        },
        {
             "name": "TV",
@@ -143,7 +161,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
+            "time": 5,
+            "clean": false
        }
     ],
     "LinkData":
@@ -151,6 +170,7 @@
         "Sink": ["DishWasher"],
         "Shelf": ["Table"],
         "DishWasher": ["Vacum"],
-        "Trashcan": ["Vacum"]
+        "Trashcan": ["Vacum"],
+        "Milk": ["Sink"]
     }
 }

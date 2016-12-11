@@ -1,18 +1,18 @@
 package actors;
 
-import flixel.FlxSprite;
 import flixel.FlxG;
-import flixel.tweens.FlxTween;
+import flixel.FlxSprite;
 import AssetPaths;
+import flixel.tweens.FlxTween;
 
-class SinkItem extends RoomItem
+class TableItem extends RoomItem
 {
     var dishes:FlxSprite;
     public function new(X:Int, Y:Int, CanClean:Bool=true)
     {
         super(X,Y,CanClean);
 
-        dishes = new FlxSprite(343,933);
+        dishes = new FlxSprite(850,835);
         dishes.loadGraphic(AssetPaths.dishes__png);
         dishes.alpha = 1;        
     }
@@ -48,4 +48,5 @@ class SinkItem extends RoomItem
         super.addTo(parent);
         parent.add(dishes);
     }
+ 
 }

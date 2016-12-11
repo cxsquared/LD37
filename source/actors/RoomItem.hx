@@ -14,12 +14,15 @@ class RoomItem extends FlxSprite
     public var timeItTakes = 5;
     private var isCleaning = false;
 
-    public function new(X:Int, Y:Int)
+    public function new(X:Int, Y:Int, CanClean:Bool=true)
     {
         super(X, Y);
 
-        FlxMouseEventManager.add(this, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
-        objectsToDirty = new FlxTypedGroup<RoomItem>();
+        if (CanClean)
+        {
+            FlxMouseEventManager.add(this, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
+            objectsToDirty = new FlxTypedGroup<RoomItem>();
+        }
     }
     
     private function onMouseDown(s:FlxSprite):Void
@@ -44,6 +47,14 @@ class RoomItem extends FlxSprite
 
     private function onMouseOut(s:FlxSprite):Void
     {
+    }
+
+    override public function update(elapsed:Float):Void
+    {
+        super.update(elapsed);
+        
+        FlxG.watch.addQuick("Item " + name, this.x + ":" + this.y);
+
     }
 
     public function Clean():Void

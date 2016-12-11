@@ -9,9 +9,9 @@ import flixel.tweens.FlxEase;
 class VacumItem extends RoomItem
 {
     var dirtTrail:FlxSprite;
-    public function new(X:Int, Y:Int)
+    public function new(X:Int, Y:Int, CanClean:Bool=true)
     {
-        super(X,Y);
+        super(X,Y,CanClean);
 
         dirtTrail = new FlxSprite(407,1161);
         dirtTrail.loadGraphic(AssetPaths.trail__png);

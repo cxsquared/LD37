@@ -32,6 +32,8 @@ class ActorFactory
         roomItemClasses.set("RoomItem", RoomItem);
         roomItemClasses.set("VacumItem", VacumItem);
         roomItemClasses.set("TrashcanItem", TrashcanItem);
+        roomItemClasses.set("SinkItem", SinkItem);
+        roomItemClasses.set("TableItem", TableItem);
     }
 
     public function parseItems(ItemsDataPath:String):FlxTypedGroup<RoomItem>
@@ -51,7 +53,15 @@ class ActorFactory
     {
         var x = Std.parseFloat(Reflect.field(itemData, "X"));
         var y = Std.parseFloat(Reflect.field(itemData, "Y"));
-        var newItem:RoomItem = Type.createInstance(roomItemClasses[Reflect.field(itemData, "class")], [x, y]);
+        var newItem:RoomItem;
+        if (Reflect.hasField(itemData, "clean"))
+        {
+            newItem = Type.createInstance(roomItemClasses[Reflect.field(itemData, "class")], [x, y, Reflect.field(itemData, "clean")]);
+        }
+        else
+        {
+            newItem = Type.createInstance(roomItemClasses[Reflect.field(itemData, "class")], [x, y, true]);
+        }
         newItem.name = Reflect.field(itemData, "name");
         
         var height:Int = Reflect.field(itemData, "height");

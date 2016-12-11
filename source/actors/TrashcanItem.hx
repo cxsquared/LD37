@@ -9,9 +9,9 @@ import flixel.tweens.FlxEase;
 class TrashcanItem extends RoomItem
 {
     var trashbag:FlxSprite;
-    public function new(X:Int, Y:Int)
+    public function new(X:Int, Y:Int, CanClean:Bool=true)
     {
-        super(X,Y);
+        super(X,Y,CanClean);
 
         trashbag = new FlxSprite(407,1161);
         trashbag.loadGraphic(AssetPaths.trash__png);
