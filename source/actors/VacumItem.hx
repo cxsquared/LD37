@@ -3,6 +3,8 @@ package actors;
 import flixel.FlxSprite;
 import AssetPaths;
 import flixel.FlxG;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 
 class VacumItem extends RoomItem
 {
@@ -19,8 +21,33 @@ class VacumItem extends RoomItem
     override public function Clean():Void
     {
         super.Clean();
-        dirtTrail.alpha = 0;
+        FlxTween.tween(this, {x: 1185, y: 635}, .5, {ease:FlxEase.elasticInOut, onComplete:VacumCleanFloor});
+        isCleaning = true;
         //FlxG.log.add("DirtTrail at " + dirtTrail.x + " " + dirtTrail.y);
+        // 1185:635
+        //391:1082
+    }
+
+    private function VacumCleanFloor(t:FlxTween):Void
+    {
+        FlxTween.tween(this, {x:451, y:1102}, 1, {ease:FlxEase.elasticInOut, onComplete:VacumTweenBackwards});
+    }
+
+    private function VacumTweenBackwards(t:FlxTween):Void
+    {
+        FlxTween.tween(this, {x:1185, y:635}, 1, {ease:FlxEase.elasticInOut, onComplete:VacumLastTween});
+        FlxTween.tween(dirtTrail, {alpha:0}, 1);
+    }
+
+    private function VacumLastTween(t:FlxTween):Void
+    {
+        FlxTween.tween(this, {x:954, y: 486}, .5, {ease:FlxEase.elasticInOut, onComplete:VacumTweenDone});
+        
+    }
+
+    private function VacumTweenDone(t:FlxTween):Void
+    {
+        isCleaning = false;
     }
 
     override public function Dirty():Void

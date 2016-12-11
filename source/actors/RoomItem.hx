@@ -12,6 +12,7 @@ class RoomItem extends FlxSprite
     public var isDirty(default, null):Bool = true;
     public var name = "";
     public var timeItTakes = 5;
+    private var isCleaning = false;
 
     public function new(X:Int, Y:Int)
     {
@@ -23,7 +24,7 @@ class RoomItem extends FlxSprite
     
     private function onMouseDown(s:FlxSprite):Void
     {
-        if (isDirty)
+        if (isDirty && !isCleaning)
         {
             Clean();
             objectsToDirty.forEach(function(object:RoomItem):Void

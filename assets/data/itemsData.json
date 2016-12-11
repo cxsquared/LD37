@@ -98,6 +98,18 @@
             "time": 5
        },
        {
+           "name": "Vacum",
+           "image": "assets/images/vacuum.png",
+           "class": "VacumItem",
+           "X": 954,
+           "Y": 486,
+           "height": -1,
+           "width": -1,
+           "cleanFrames": [0],
+           "dirtyFrames": [0],
+            "time": 5
+       },
+       {
             "name": "Shelf",
             "image": "assets/images/shelf.png",
             "class": "RoomItem",
@@ -131,18 +143,6 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 5
-       },
-       {
-           "name": "Vacum",
-           "image": "assets/images/vacuum.png",
-           "class": "VacumItem",
-           "X": 954,
-           "Y": 486,
-           "height": -1,
-           "width": -1,
-           "cleanFrames": [0],
-           "dirtyFrames": [0],
             "time": 5
        }
     ],
