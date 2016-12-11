@@ -10,6 +10,7 @@ import actors.RoomItem;
 import haxe.Json;
 import openfl.Assets;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
@@ -32,8 +33,8 @@ class PlayState extends FlxState
 
         add(TextManager.getInstance());
 
-        TextManager.getInstance().showText("Woot woot hopefully this works. This should be the first messaged shown.", 3);
-        TextManager.getInstance().showText("This should be show secend after 3 seconds and this should show up on top.", 3, true);
+        TextManager.getInstance().showText(TextLineManager.getInstance().getLine("wifeStart"), 7, FlxColor.fromString('0xFFdd8dc1'), true);
+        TextManager.getInstance().showText(TextLineManager.getInstance().getLine("playerStart"), 5);
 	}
 
     private function addItems():Void
