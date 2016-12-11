@@ -31,6 +31,7 @@ class ActorFactory
         roomItemClasses = new Map<String, Class<Dynamic>>();
         roomItemClasses.set("RoomItem", RoomItem);
         roomItemClasses.set("VacumItem", VacumItem);
+        roomItemClasses.set("TrashcanItem", TrashcanItem);
     }
 
     public function parseItems(ItemsDataPath:String):FlxTypedGroup<RoomItem>

@@ -76,7 +76,7 @@
        {
             "name": "Trashcan",
             "image": "assets/images/trashCan.png",
-            "class": "RoomItem",
+            "class": "TrashcanItem",
             "X": 388,
             "Y": 1000,
             "height": -1,

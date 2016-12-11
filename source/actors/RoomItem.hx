@@ -23,11 +23,14 @@ class RoomItem extends FlxSprite
     
     private function onMouseDown(s:FlxSprite):Void
     {
-        Clean();
-        objectsToDirty.forEach(function(object:RoomItem):Void
-                {
-                    object.Dirty();
-                });
+        if (isDirty)
+        {
+            Clean();
+            objectsToDirty.forEach(function(object:RoomItem):Void
+                    {
+                        object.Dirty();
+                    });
+        }
     }
     
     private function onMouseUp(s:FlxSprite):Void
@@ -73,5 +76,10 @@ class RoomItem extends FlxSprite
     public function addObjectToDirty(item:RoomItem):Void
     {
         objectsToDirty.add(item);
+    }
+
+    public function addTo(parent:Dynamic):Void
+    {
+        parent.add(this);
     }
 }

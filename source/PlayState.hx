@@ -36,7 +36,7 @@ class PlayState extends FlxState
         roomItems = ActorFactory.getInstance().parseItems("assets/data/itemsData.json");
         for (item in roomItems)
         {
-            add(item);
+            item.addTo(this);
         }
     }
 
