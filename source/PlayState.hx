@@ -29,6 +29,8 @@ class PlayState extends FlxState
 
         addItems();
         linkItems();
+
+        add(TextManager.getInstance());
 	}
 
     private function addItems():Void
