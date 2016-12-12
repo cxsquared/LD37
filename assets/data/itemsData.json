@@ -182,7 +182,32 @@
             "dirtyFrames": [0],
             "time": 3,
             "sound": "FebreezeSfx"
+       },
+       {
+            "name": "Tie",
+            "image": "assets/images/smalltie.png",
+            "class": "TieItem",
+            "X": 783,
+            "Y": 439,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 25    
+       },
+       {
+            "name": "Book",
+            "image": "assets/images/smallbook.png",
+            "class": "BookItem",
+            "X": 1378,
+            "Y": 809,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 25    
        }
+
     ],
     "LinkData":
     { 

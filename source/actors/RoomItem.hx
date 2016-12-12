@@ -5,6 +5,7 @@ import flixel.input.mouse.FlxMouseEventManager;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxG;
 import SoundManager;
+import FullScreenImageManager;
 
 class RoomItem extends FlxSprite
 {
@@ -33,7 +34,7 @@ class RoomItem extends FlxSprite
     
     private function onMouseDown(s:FlxSprite):Void
     {
-        if (isDirty && !isCleaning && !TextManager.getInstance().showingText)
+        if (isDirty && !isCleaning && !TextManager.getInstance().showingText && !FullScreenImageManager.getInstance().showingImage)
         {
             Clean();
             objectsToDirty.forEach(function(object:RoomItem):Void

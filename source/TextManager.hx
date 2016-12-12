@@ -29,7 +29,7 @@ class TextManager extends FlxGroup
     private var textSprite:FlxTypeText;
     private var textTimer:FlxTimer;
     private var textQueue:Array<TextData>;
-    private var typingText:Bool = false;
+    public var typingText:Bool = false;
     private var currentDelay:Float = 2.5;
     public var showingText(default, null):Bool = false;
 

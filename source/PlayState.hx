@@ -35,6 +35,9 @@ class PlayState extends FlxState
         
         TimeManager.getInstance().resetTime();
 
+        FullScreenImageManager.reset();
+        add(FullScreenImageManager.getInstance());
+
         TextManager.reset();
         add(TextManager.getInstance());
 
@@ -57,7 +60,7 @@ class PlayState extends FlxState
 
         FlxG.watch.addQuick("Time Left", TimeManager.getInstance().getTimeLeft());
 
-        if (isWholeRoomClean() && !RoomItem.isCleaning)
+        if (isWholeRoomClean() && !RoomItem.isCleaning && !FullScreenImageManager.getInstance().showingImage)
         {
             if (endStarted && !TextManager.getInstance().showingText)
             {
@@ -78,7 +81,7 @@ class PlayState extends FlxState
             }
             endStarted = true;
         }
-        else if (!TimeManager.getInstance().isTimeLeft()  && !RoomItem.isCleaning)
+        else if (!TimeManager.getInstance().isTimeLeft()  && !RoomItem.isCleaning && !FullScreenImageManager.getInstance().showingImage)
         {
             if (endStarted && !TextManager.getInstance().showingText)
             {
@@ -86,9 +89,14 @@ class PlayState extends FlxState
             }
             else if (!endStarted)
             {
-                if (false) // put secret stuff here
+                if (!getItem("Tie").isDirty && !getItem("Book").isDirty) // put secret stuff here
                 {
                     SoundManager.getInstance().stopMusic();
+                    TextManager.getInstance().showText(TextLineManager.getInstance().getLine("timeupSecret00"), 7, FlxColor.fromString('0xFFdd8dc1'), true);
+                    TextManager.getInstance().showText(TextLineManager.getInstance().getLine("timeupSecret01"), 5);
+                    TextManager.getInstance().showText(TextLineManager.getInstance().getLine("timeupSecret02"), 7, FlxColor.fromString('0xFFdd8dc1'), true);
+                    TextManager.getInstance().showText(TextLineManager.getInstance().getLine("timeupSecret03"), 5);
+                    
                 }
                 else
                 {
@@ -137,7 +145,7 @@ class PlayState extends FlxState
     {   
         for (item in roomItems)
         {
-            if (item.isDirty)
+            if (item.isDirty && (item.name != "Tie" || item.name != "Book"))
             {
                 return false;
             }
