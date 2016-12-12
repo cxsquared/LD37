@@ -54,7 +54,7 @@ class PlayState extends FlxState
 
         FlxG.watch.addQuick("Time Left", TimeManager.getInstance().getTimeLeft());
 
-        if (isWholeRoomClean())
+        if (isWholeRoomClean() && !RoomItem.isCleaning)
         {
             if (endStarted && !TextManager.getInstance().showingText)
             {
@@ -75,8 +75,7 @@ class PlayState extends FlxState
             }
             endStarted = true;
         }
-
-        if (!TimeManager.getInstance().isTimeLeft())
+        else if (!TimeManager.getInstance().isTimeLeft()  && !RoomItem.isCleaning))
         {
             if (endStarted && !TextManager.getInstance().showingText)
             {
