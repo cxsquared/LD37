@@ -108,4 +108,10 @@ class SoundManager
 
         return allSounds;
     }
+
+    public function playHit():Void
+    {
+        FlxG.sound.music.stop();
+        FlxG.sound.play(AssetPaths.MusicHit__wav);
+    }
 }

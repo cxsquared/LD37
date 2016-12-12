@@ -88,9 +88,11 @@ class PlayState extends FlxState
             {
                 if (false) // put secret stuff here
                 {
+                    SoundManager.getInstance().stopMusic();
                 }
                 else
                 {
+                    SoundManager.getInstance().playHit();
                     TextManager.getInstance().showText(TextLineManager.getInstance().getLine("timeup00"), 7, FlxColor.fromString('0xFFdd8dc1'), true);
                     TextManager.getInstance().showText(TextLineManager.getInstance().getLine("timeup01"), 5);
                     TextManager.getInstance().showText(TextLineManager.getInstance().getLine("timeup02"), 7, FlxColor.fromString('0xFFdd8dc1'), true);
