@@ -46,6 +46,7 @@ class TextManager extends FlxGroup
         textSprite.alignment = FlxTextAlign.CENTER;
         textSprite.setFormat(AssetPaths.GeosansLight__ttf, 71);
         textSprite.alpha = -1;
+        textSprite.setTypingVariation();
         add(textSprite);
 
         textTimer = new FlxTimer();
@@ -83,6 +84,7 @@ class TextManager extends FlxGroup
             textSprite.resetText(text);
             textSprite.color = color;
             placeText(showOnTop);
+            setSounds(showOnTop);
             textSprite.alpha = 1;
             FlxTween.tween(background, {alpha:1}, .35, {onComplete:startText});
             
@@ -124,7 +126,7 @@ class TextManager extends FlxGroup
             FlxTween.tween(textSprite, {alpha:0}, .15);
             FlxTween.tween(background, {alpha:0}, .35);
             showingText = false;
-            textTier.cancel();
+            textTimer.cancel();
         }
         else if (typingText)
         {
@@ -136,6 +138,7 @@ class TextManager extends FlxGroup
             textSprite.resetText(newTextData.text);
             textSprite.color = newTextData.color;
             placeText(newTextData.showOnTop);
+            setSounds(newTextData.showOnTop);
             currentDelay = length;
             startText();
         }
@@ -146,6 +149,11 @@ class TextManager extends FlxGroup
         var yPos = onTop ? 0 : FlxG.height - FlxG.height/4;
         textSprite.y = yPos + 10;
         background.y = yPos;
+    }
+
+    private function setSounds(isWife:Bool=false):Void
+    {
+        textSprite.sounds = isWife ? SoundManager.getInstance().getWifeSounds() : SoundManager.getInstance().getPlayerSounds();
     }
 
 }

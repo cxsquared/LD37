@@ -24,7 +24,8 @@ class PlayState extends FlxState
 		super.create();
         
         SoundManager.getInstance().playMusic();
-
+        SoundManager.getInstance().loadSounds();
+        
         background = new FlxSprite();
         background.loadGraphic(AssetPaths.room__png);
         add(background);
