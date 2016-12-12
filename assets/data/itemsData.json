@@ -163,6 +163,18 @@
             "dirtyFrames": [0],
             "time": 5,
             "clean": false
+       },
+       {
+            "name": "Airfreshener",
+            "image": "assets/images/febreeze.png",
+            "class": "AirfreshenerItem",
+            "X": 470,
+            "Y": 900,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 3
        }
     ],
     "LinkData":

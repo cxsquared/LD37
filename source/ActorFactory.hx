@@ -34,6 +34,7 @@ class ActorFactory
         roomItemClasses.set("TrashcanItem", TrashcanItem);
         roomItemClasses.set("SinkItem", SinkItem);
         roomItemClasses.set("TableItem", TableItem);
+        roomItemClasses.set("AirfreshenerItem", AirfreshenerItem);
     }
 
     public function parseItems(ItemsDataPath:String):FlxTypedGroup<RoomItem>
