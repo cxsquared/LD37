@@ -50,6 +50,11 @@ class VacumItem extends RoomItem
         RoomItem.isCleaning = false;
     }
 
+    override private function alreadyCleaned():Void
+    {
+        Clean();
+    }
+
     override public function Dirty():Void
     {
         super.Dirty();
