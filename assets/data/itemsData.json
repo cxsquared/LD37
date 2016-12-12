@@ -24,8 +24,8 @@
             "width": 44,
             "cleanFrames": [1],
             "dirtyFrames": [0],
-            "time": 5
-
+            "time": 5,
+            "sound": "MilkSfx"
         },
         {
             "name": "Bed",
@@ -76,7 +76,8 @@
             "width": 296,
             "cleanFrames": [0],
             "dirtyFrames": [1],
-            "time": 3
+            "time": 3,
+            "sound": "CounterSfx"
        },
        {
             "name": "Sink",
@@ -88,7 +89,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 3
+            "time": 3,
+            "sound": "SinkSfx"
        },
        {
             "name": "Trashcan",
@@ -100,7 +102,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 3
+            "time": 3,
+            "sound": "TrashSfx"
        },
        {
             "name": "Table",
@@ -112,7 +115,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 3
+            "time": 3,
+            "sound": "TableSfx"
        },
        {
            "name": "Vacum",
@@ -124,7 +128,8 @@
            "width": -1,
            "cleanFrames": [0],
            "dirtyFrames": [0],
-            "time": 2
+            "time": 2,
+            "sound": "VacuumSfx"
        },
        {
             "name": "Shelf",
@@ -136,7 +141,8 @@
             "width": 195,
             "cleanFrames": [0],
             "dirtyFrames": [1],
-            "time": 5
+            "time": 5,
+            "sound": "ShelfSfx"
        },
        {
             "name": "TV Stand",
@@ -174,7 +180,8 @@
             "width": -1,
             "cleanFrames": [0],
             "dirtyFrames": [0],
-            "time": 3
+            "time": 3,
+            "sound": "FebreezeSfx"
        }
     ],
     "LinkData":

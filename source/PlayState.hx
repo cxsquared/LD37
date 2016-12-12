@@ -118,7 +118,7 @@ class PlayState extends FlxState
         }
     }
 
-    private function getItem(name:String):RoomItem
+    public function getItem(name:String):RoomItem
     {
         for (item in roomItems)
         {

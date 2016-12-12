@@ -7,6 +7,7 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import TextLineManager;
 import TextManager;
+import PlayState;
 
 class AirfreshenerItem extends RoomItem
 {
@@ -30,7 +31,17 @@ class AirfreshenerItem extends RoomItem
         }
         super.Clean();
         RoomItem.isCleaning = true;
-        FlxTween.tween(stink, {alpha:0}, 2);
+        
+        var state:PlayState = cast(FlxG.state, PlayState);
+        if (!state.getItem("Trashcan").isDirty)
+        {
+            FlxTween.tween(stink, {alpha:0}, 2);
+        }
+        else
+        {
+            this.isDirty = true;
+        }
+
         FlxG.log.add("stink at " + stink.x + " " + stink.y);
         FlxTween.tween(this, {x: 750, y:650}, 1, {ease:FlxEase.elasticInOut, onComplete:returnAirfreshener});
     }

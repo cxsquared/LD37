@@ -4,6 +4,7 @@ import flixel.FlxSprite;
 import flixel.input.mouse.FlxMouseEventManager;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxG;
+import SoundManager;
 
 class RoomItem extends FlxSprite
 {
@@ -13,6 +14,7 @@ class RoomItem extends FlxSprite
     public var name = "";
     public var timeItTakes = 5;
     public static var isCleaning = false;
+    public var soundEffect = "";
 
     public function new(X:Int, Y:Int, CanClean:Bool=true)
     {
@@ -68,6 +70,10 @@ class RoomItem extends FlxSprite
     public function Clean():Void
     {
         isDirty = false;
+        if (soundEffect != "")
+        {
+            SoundManager.getInstance().playSfx(soundEffect, this.x, this.y);
+        }
         animation.play("Clean");
         FlxG.log.add("Clean called on " + name + " at " + x + ":" + y);
         TimeManager.getInstance().spendTime(timeItTakes);

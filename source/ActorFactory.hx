@@ -65,7 +65,10 @@ class ActorFactory
             newItem = Type.createInstance(roomItemClasses[Reflect.field(itemData, "class")], [x, y, true]);
         }
         newItem.name = Reflect.field(itemData, "name");
-        
+        if (Reflect.hasField(itemData, "sound"))
+        {
+            newItem.soundEffect = Reflect.field(itemData, "sound");
+        }
         var height:Int = Reflect.field(itemData, "height");
         var width:Int = Reflect.field(itemData, "width");
         
