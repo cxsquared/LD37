@@ -75,15 +75,15 @@ class SoundManager
     {
         if (FlxG.sound.music == null)
         {
-            //FlxG.sound.playMusic(AssetPaths.LD37Room__mp3, 0, true);
+            FlxG.sound.playMusic(AssetPaths.LD37Room__mp3, 0, true);
         }
 
-        //FlxG.sound.music.fadeIn(1, 0);
+        FlxG.sound.music.fadeIn(.5, FlxG.sound.music.volume, .15);
     }
 
     public function stopMusic():Void
     {
-        //FlxG.sound.music.fadeOut(1);
+        FlxG.sound.music.fadeOut(1);
     }
 
     public function playWifeNote():Void
