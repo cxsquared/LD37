@@ -77,7 +77,7 @@ class TextManager extends FlxGroup
     }
 
 
-    public function showText(text:String, length:Float, color:FlxColor=FlxColor.WHITE, showOnTop:Bool=false):Void
+    public function showText(text:String, ?length:Float=4, ?color:FlxColor=FlxColor.WHITE, ?showOnTop:Bool=false):Void
     {
         if (!showingText)
         {

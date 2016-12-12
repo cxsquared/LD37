@@ -17,7 +17,8 @@
         "timeupSecret00": "I gave you one thing to do and you couldn't even get that done!",
         "timeupSecret01": "I found out what you've been doing...",
         "timeupSecret02": "What do you mean?",
-        "timeupSecret03": "After all we've done together. I can't believe it's ending like this."
+        "timeupSecret03": "After all we've done together. I can't believe it's ending like this.",
+        "airfreshenerTooClean": "It smells fine in here. I just hope the trashcan doesn't start stinking again."
     }
 
 }

@@ -39,6 +39,10 @@ class RoomItem extends FlxSprite
                         object.Dirty();
                     });
         }
+        else if (!isCleaning && !TextManager.getInstance().showingText)
+        {
+            alreadyCleaned();
+        }
     }
     
     private function onMouseUp(s:FlxSprite):Void
@@ -67,6 +71,10 @@ class RoomItem extends FlxSprite
         animation.play("Clean");
         FlxG.log.add("Clean called on " + name + " at " + x + ":" + y);
         TimeManager.getInstance().spendTime(timeItTakes);
+    }
+
+    private function alreadyCleaned():Void
+    {
     }
 
     public function Dirty():Void
