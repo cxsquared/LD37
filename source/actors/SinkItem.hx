@@ -24,11 +24,6 @@ class SinkItem extends RoomItem
         FlxG.log.add("dishes at " + dishes.x + " " + dishes.y);
     }
 
-    private function trashDone(t:FlxTween):Void
-    {
-
-    }
-
     override public function Dirty():Void
     {
         super.Dirty();

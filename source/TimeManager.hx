@@ -40,4 +40,9 @@ class TimeManager
         return MaxTime - timeSpent;
     }
 
+    public function resetTime():Void
+    {
+        timeSpent = 0;
+    }
+
 }

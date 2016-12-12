@@ -33,6 +33,8 @@ class PlayState extends FlxState
         addItems();
         linkItems();
         
+        TimeManager.getInstance().resetTime();
+
         TextManager.reset();
         add(TextManager.getInstance());
 
@@ -80,7 +82,7 @@ class PlayState extends FlxState
         {
             if (endStarted && !TextManager.getInstance().showingText)
             {
-                FlxG.switchState(new MenuState());
+                FlxG.switchState(new QuoteScreen());
             }
             else if (!endStarted)
             {

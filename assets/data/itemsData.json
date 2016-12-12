@@ -132,10 +132,10 @@
             "class": "RoomItem",
             "X": 1334,
             "Y":449,
-            "height": -1,
-            "width": -1,
+            "height": 477,
+            "width": 195,
             "cleanFrames": [0],
-            "dirtyFrames": [0],
+            "dirtyFrames": [1],
             "time": 5
        },
        {
@@ -180,7 +180,7 @@
     "LinkData":
     { 
         "Sink": ["DishWasher"],
-        "Shelf": ["Table"],
+        "Shelf": ["Table", "Trashcan", "Airfreshener"],
         "Trashcan": ["Vacum"],
         "Milk": ["Sink"],
         "Table": ["Sink"]
