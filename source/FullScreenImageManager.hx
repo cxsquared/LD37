@@ -106,9 +106,13 @@ class FullScreenImageManager extends FlxGroup
 
     private function fadeOut(?t:FlxTimer):Void 
     {
-        showingImage = false;
-        FlxTween.tween(background, {alpha:0}, .5);
+        FlxTween.tween(background, {alpha:0}, .75, {onComplete:fadedOut});
         FlxTween.tween(image, {alpha:0}, .35);
+    }
+
+    private function fadedOut(t:FlxTween):Void
+    {
+        showingImage = false;
     }
 
     override public function destroy():Void

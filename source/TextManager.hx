@@ -81,6 +81,7 @@ class TextManager extends FlxGroup
     {
         if (!showingText)
         {
+            textTimer.cancel();
             textSprite.resetText(text);
             textSprite.color = color;
             placeText(showOnTop);

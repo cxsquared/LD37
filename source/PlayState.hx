@@ -145,7 +145,7 @@ class PlayState extends FlxState
     {   
         for (item in roomItems)
         {
-            if (item.isDirty && (item.name != "Tie" || item.name != "Book"))
+            if (item.isDirty && (item.name != "Tie" && item.name != "Book"))
             {
                 return false;
             }
