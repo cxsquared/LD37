@@ -8,6 +8,7 @@ import flixel.text.FlxText.FlxTextAlign;
 import flixel.group.FlxGroup;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxTween;
+import flixel.addons.text.FlxTypeText;
 
 typedef TextData = { text:String, length:Float, showOnTop:Bool, color:FlxColor }
 
@@ -25,9 +26,11 @@ class TextManager extends FlxGroup
     }
 
     private var background:FlxSprite;
-    private var textSprite:FlxText;
+    private var textSprite:FlxTypeText;
     private var textTimer:FlxTimer;
     private var textQueue:Array<TextData>;
+    private var typingText:Bool = false;
+    private var currentDelay:Float = 2.5;
     public var showingText(default, null):Bool = false;
 
     private function new()
@@ -39,7 +42,7 @@ class TextManager extends FlxGroup
         background.alpha = -1;
         add(background);
 
-        textSprite = new FlxText(9, FlxG.height - FlxG.height/4 + 10, FlxG.width-20, "This is a test for the text", 72);
+        textSprite = new FlxTypeText(9, FlxG.height - FlxG.height/4 + 10, FlxG.width-20, "This is a test for the text", 72);
         textSprite.alignment = FlxTextAlign.CENTER;
         textSprite.setFormat(AssetPaths.GeosansLight__ttf, 71);
         textSprite.alpha = -1;
@@ -77,13 +80,13 @@ class TextManager extends FlxGroup
     {
         if (!showingText)
         {
-            textSprite.text = text;
+            textSprite.resetText(text);
             textSprite.color = color;
             placeText(showOnTop);
-            FlxTween.tween(textSprite, {alpha:1}, .5);
-            FlxTween.tween(background, {alpha:1}, .35);
-
-            textTimer.start(length + .5, onTimer, 1);
+            textSprite.alpha = 1;
+            FlxTween.tween(background, {alpha:1}, .35, {onComplete:startText});
+            
+            currentDelay = length;
             showingText = true;
         }
         else
@@ -93,26 +96,48 @@ class TextManager extends FlxGroup
         }
     }
 
+    private function startText(?t:FlxTween):Void
+    {
+        typingText = true;
+        textTimer.cancel();
+        textSprite.start(.05, false, false, typingDone);
+    }
+
+    private function typingDone():Void
+    {
+        typingText = false;
+        textTimer.cancel();
+        FlxG.log.add("Text timer cancled and started again");
+        textTimer.start(length, onTimer, 1);
+    }
+
     private function onTimer(t:FlxTimer):Void
     {
+        FlxG.log.add("onTimer called");
         handleNextText();
     }
 
     private function handleNextText():Void
     {
-        if (textQueue.length == 0)
+        if (textQueue.length == 0 && !typingText)
         {
             FlxTween.tween(textSprite, {alpha:0}, .15);
             FlxTween.tween(background, {alpha:0}, .35);
             showingText = false;
+            textTier.cancel();
+        }
+        else if (typingText)
+        {
+            textSprite.skip();
         }
         else
         {
             var newTextData = textQueue.shift();
-            textSprite.text = newTextData.text;
+            textSprite.resetText(newTextData.text);
             textSprite.color = newTextData.color;
             placeText(newTextData.showOnTop);
-            textTimer.start(newTextData.length, onTimer, 1);
+            currentDelay = length;
+            startText();
         }
     }
 

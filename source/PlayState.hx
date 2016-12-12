@@ -75,7 +75,7 @@ class PlayState extends FlxState
             }
             endStarted = true;
         }
-        else if (!TimeManager.getInstance().isTimeLeft()  && !RoomItem.isCleaning))
+        else if (!TimeManager.getInstance().isTimeLeft()  && !RoomItem.isCleaning)
         {
             if (endStarted && !TextManager.getInstance().showingText)
             {
