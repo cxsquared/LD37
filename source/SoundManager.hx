@@ -63,12 +63,13 @@ class SoundManager
 
         sfxSounds.set("CounterSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.counterSfx__wav)), FlxSound));
         sfxSounds.set("FebreezeSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.febreezeSfx__wav)), FlxSound));
-        sfxSounds.set("Litterbox", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.litterboxSfx__wav)), FlxSound));
+        sfxSounds.set("LitterboxSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.litterboxSfx__wav)), FlxSound));
         sfxSounds.set("MilkSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.milkSfx__wav)), FlxSound));
         sfxSounds.set("ShelfSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.shelfSfx__wav)), FlxSound));
         sfxSounds.set("SinkSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.sinkSfx__wav)), FlxSound));
         sfxSounds.set("TableSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.tableSfx__wav)), FlxSound));
         sfxSounds.set("TrashSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.trashSfx__wav)), FlxSound));
+        sfxSounds.set("VacuumSfx", cast(FlxG.state.add(new FlxSound().loadEmbedded(AssetPaths.vacuumSfx__wav)), FlxSound));
     }
 
     public function playMusic():Void

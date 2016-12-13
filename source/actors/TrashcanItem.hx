@@ -13,7 +13,7 @@ class TrashcanItem extends RoomItem
     {
         super(X,Y,CanClean);
 
-        trashbag = new FlxSprite(407,1161);
+        trashbag = new FlxSprite(X+6,Y);
         trashbag.loadGraphic(AssetPaths.trash__png);
         trashbag.alpha = 0;        
     }
@@ -22,10 +22,8 @@ class TrashcanItem extends RoomItem
     {
         super.Clean();
         trashbag.alpha = 1;
-        trashbag.x = 391;
-        trashbag.y = 954;
         RoomItem.isCleaning = true;
-        FlxTween.tween(trashbag, {y:trashbag.y - trashbag.width}, .5, {ease:FlxEase.elasticInOut, onComplete:trashOut});
+        FlxTween.tween(trashbag, {y:trashbag.y - trashbag.height}, .5, {ease:FlxEase.elasticInOut, onComplete:trashOut});
         //FlxG.log.add("trashbag at " + trashbag.x + " " + trashbag.y);
     }
 
@@ -37,6 +35,8 @@ class TrashcanItem extends RoomItem
     private function trashDone(t:FlxTween):Void
     {
         trashbag.alpha = 0;
+        trashbag.x = this.x+6;
+        trashbag.y = this.y;
         RoomItem.isCleaning = false;
     }
 

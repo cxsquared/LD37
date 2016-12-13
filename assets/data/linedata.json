@@ -4,7 +4,7 @@
         "title": "Chore",
         "start": "Start",
         "cody": "Cody Claborn\n@Cxsquared",
-        "frank": "Frank Moussette",
+        "frank": "Frank Moussette\n@Moussetticus",
         "wifeStart": "I'm off to the store love. I'll be back in an hour. The house better be clean by the time I get back!",
         "playerStart": "Ugh I'll never get this cleaned in time.",
         "roomCleanedGood": "Looks like I got the room cleaned with plenty of time to spare.",
@@ -22,8 +22,8 @@
         "quote": "\"Such silence has an actual sound, the sound of disappearance.\"",
         "author": " -- Suzanne Finnamore",
         "nothing": "It all means nothing...",
-        "tie": "I don't remeber buying this tie.",
-        "book": "When did we get this book?"
+        "tie": "I don't remember buying this tie.",
+        "book": "It says, \"To my dearest..?\" When did we get this book?"
     }
 
 }

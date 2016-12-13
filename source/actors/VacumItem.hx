@@ -13,7 +13,7 @@ class VacumItem extends RoomItem
     {
         super(X,Y,CanClean);
 
-        dirtTrail = new FlxSprite(407,1161);
+        dirtTrail = new FlxSprite(340,819);
         dirtTrail.loadGraphic(AssetPaths.trail__png);
         FlxG.state.add(dirtTrail);
     }
@@ -21,7 +21,7 @@ class VacumItem extends RoomItem
     override public function Clean():Void
     {
         super.Clean();
-        FlxTween.tween(this, {x: 1185, y: 635}, .5, {ease:FlxEase.elasticInOut, onComplete:VacumCleanFloor});
+        FlxTween.tween(this, {x: this.x - 5, y: this.y+20}, .5, {ease:FlxEase.elasticInOut, onComplete:VacumCleanFloor});
         RoomItem.isCleaning = true;
         //FlxG.log.add("DirtTrail at " + dirtTrail.x + " " + dirtTrail.y);
         // 1185:635
@@ -30,18 +30,18 @@ class VacumItem extends RoomItem
 
     private function VacumCleanFloor(t:FlxTween):Void
     {
-        FlxTween.tween(this, {x:451, y:1102}, 1, {ease:FlxEase.elasticInOut, onComplete:VacumTweenBackwards});
+        FlxTween.tween(this, {x:183, y:759}, 1, {ease:FlxEase.elasticInOut, onComplete:VacumTweenBackwards});
     }
 
     private function VacumTweenBackwards(t:FlxTween):Void
     {
-        FlxTween.tween(this, {x:1185, y:635}, 1, {ease:FlxEase.elasticInOut, onComplete:VacumLastTween});
+        FlxTween.tween(this, {x:920, y:340}, 1, {ease:FlxEase.elasticInOut, onComplete:VacumLastTween});
         FlxTween.tween(dirtTrail, {alpha:0}, 1);
     }
 
     private function VacumLastTween(t:FlxTween):Void
     {
-        FlxTween.tween(this, {x:954, y: 486}, .5, {ease:FlxEase.elasticInOut, onComplete:VacumTweenDone});
+        FlxTween.tween(this, {x:925, y: 320}, .5, {ease:FlxEase.elasticInOut, onComplete:VacumTweenDone});
         
     }
 

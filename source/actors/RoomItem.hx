@@ -64,7 +64,7 @@ class RoomItem extends FlxSprite
     {
         super.update(elapsed);
         
-        FlxG.watch.addQuick("Item " + name, this.x + ":" + this.y);
+        //FlxG.watch.addQuick("Item " + name, this.x + ":" + this.y);
 
     }
 
@@ -91,9 +91,9 @@ class RoomItem extends FlxSprite
             isDirty = true;
             animation.play("Dirty");
             FlxG.log.add("Dirty called on " + name);
-            var dust = new DustCloud(x,y);
-            FlxG.state.add(dust);
-            dust.explode();
+            //var dust = new DustCloud(x,y);
+            //FlxG.state.add(dust);
+            //dust.explode();
         }
     }
 
